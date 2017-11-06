@@ -29,7 +29,7 @@ func NewCache(driver CacheDriver) Cache {
 	go func() {
 		for range c {
 			driver.Dump()
-			break
+			os.Exit(0)
 		}
 	}()
 
